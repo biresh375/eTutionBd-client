@@ -8,7 +8,7 @@ const LatestTution = () => {
   //   axios.get("/api/tuitions?limit=6").then((res) => setTuitions(res.data));}, []);
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 ">
       <div className="max-w-7xl mx-auto px-5">
         <h2 className="text-3xl font-bold mb-6 text-[#03373d]">
           Latest Tuition Posts

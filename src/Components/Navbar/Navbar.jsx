@@ -2,19 +2,13 @@ import { useState } from "react";
 import { FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
 import { Link, NavLink } from "react-router";
 import logoimage from "../../assets/book.png";
+import UseAuth from "../../Hooks/UseAuth";
 
 export default function Navbar() {
+  const { user } = UseAuth();
   const [open, setOpen] = useState(false);
-//   const user = null;
-    const user = {
-      name: "biresh paul",
-      photoURL:
-        "https://scontent.fjsr11-1.fna.fbcdn.net/v/t39.30808-6/476799375_1818882882297475_4306958886144675378_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=pzuOR4NwPRAQ7kNvwERGgsr&_nc_oc=AdkA8UaXVEkus1u1U6TrTEr1pauSPk3G8Aq1q9s3_hWGsYbrtWFFr1ZPoVRuF3QJdEE&_nc_zt=23&_nc_ht=scontent.fjsr11-1.fna&_nc_gid=JbyBaI5xX0-EaWsToBz9fQ&oh=00_AfmmXjscq4x_YLNZI4zRBgW3J34kM9w5B38X8Mj2Kml2jw&oe=693D9B1B",
-      email: "palbiresh@gmail.com",
-      Role: "student",
-    };
 
-  const Logout = () => {
+  const LogOut = () => {
     console.log("clicked logour");
   };
   const navLinks = [
@@ -84,7 +78,7 @@ export default function Navbar() {
                 <p className="font-semibold text-gray-800">{user.name}</p>
                 <p className="text-gray-800 text-sm font-bold">{user.Role}</p>
                 <p className="text-gray-500 text-sm">{user.email}</p>
-                <button onClick={Logout} className="btn  btn-error w-full mt-2">
+                <button onClick={LogOut} className="btn  btn-error w-full mt-2">
                   Logout
                 </button>
               </div>
@@ -166,7 +160,7 @@ export default function Navbar() {
               <p className="text-gray-500 text-sm">{user.email}</p>
               <button
                 onClick={() => {
-                  Logout();
+                  LogOut();
                   setOpen(false);
                 }}
                 className="w-full text-center px-4 py-2 rounded-lg bg-red-500 text-white mb-2"

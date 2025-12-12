@@ -1,13 +1,13 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 // import axios from "axios";
 const LatestTutiors = () => {
   const [tutors, setTutors] = useState([]);
-    // useEffect(() => {
-    //   axios.get("/api/tutors?limit=6").then((res) => setTutors(res.data));
-    // }, []);
+  // useEffect(() => {
+  //   axios.get("/api/tutors?limit=6").then((res) => setTutors(res.data));
+  // }, []);
   return (
     <div>
-      <section className="py-16">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-5">
           <h2 className="text-3xl font-bold mb-6 text-[#03373d]">
             Latest Tutors

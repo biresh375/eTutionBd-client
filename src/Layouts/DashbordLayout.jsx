@@ -1,7 +1,20 @@
 import React from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router";
 
 const DashbordLayout = () => {
+  //   const user = null;
+  const user = {
+    name: "biresh paul",
+    photoURL:
+      "https://scontent.fjsr11-1.fna.fbcdn.net/v/t39.30808-6/476799375_1818882882297475_4306958886144675378_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=pzuOR4NwPRAQ7kNvwERGgsr&_nc_oc=AdkA8UaXVEkus1u1U6TrTEr1pauSPk3G8Aq1q9s3_hWGsYbrtWFFr1ZPoVRuF3QJdEE&_nc_zt=23&_nc_ht=scontent.fjsr11-1.fna&_nc_gid=JbyBaI5xX0-EaWsToBz9fQ&oh=00_AfmmXjscq4x_YLNZI4zRBgW3J34kM9w5B38X8Mj2Kml2jw&oe=693D9B1B",
+    email: "palbiresh@gmail.com",
+    Role: "student",
+  };
+
+  const Logout = () => {
+    console.log("clicked logour");
+  };
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
@@ -29,7 +42,26 @@ const DashbordLayout = () => {
               <path d="M14 10l2 2l-2 2"></path>
             </svg>
           </label>
-          <div className="px-4 text-white">Navbar Title</div>
+          <div className=" flex justify-between items-center w-full ">
+            <div>
+              <h1 className="px-4 text-white">user Dashbord</h1>
+            </div>
+            <div className="relative group cursor-pointer mr-10">
+              <img
+                src={user.photoURL}
+                alt="profile"
+                className="w-10 h-10 rounded-full border shadow"
+              />
+              <div className="absolute right-0  w-48 bg-white shadow-lg rounded-xl p-3 hidden group-hover:block">
+                <p className="font-semibold text-gray-800">{user.name}</p>
+                <p className="text-gray-800 text-sm font-bold">{user.Role}</p>
+                <p className="text-gray-500 text-sm">{user.email}</p>
+                <button onClick={Logout} className="btn  btn-error w-full mt-2">
+                  Logout
+                </button>
+              </div>
+            </div>
+          </div>
         </nav>
         {/* Page content here */}
         <div className="p-4">Page Content</div>
