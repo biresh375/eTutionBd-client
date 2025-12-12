@@ -4,6 +4,9 @@ import Home from "../Components/Home/Home/Home";
 import Tutions from "../Page/Tutions.jsx/Tutions";
 import Tutors from "../Page/Tutors/Tutors";
 import DashbordLayout from "../Layouts/DashbordLayout";
+import Login from "../Auth/Login";
+import Register from "../Auth/Register";
+import PrivateRoute from "../Components/Shared/PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -25,7 +28,19 @@ export const router = createBrowserRouter([
     ],
   },
   {
+    path: "/login",
+    element: <Login></Login>,
+  },
+  {
+    path: "/register",
+    element: <Register></Register>,
+  },
+  {
     path: "/dashbord",
-    element: <DashbordLayout></DashbordLayout>,
+    element: (
+      <PrivateRoute>
+        <DashbordLayout></DashbordLayout>
+      </PrivateRoute>
+    ),
   },
 ]);

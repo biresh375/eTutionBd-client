@@ -3,6 +3,7 @@ import { FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
 import { Link, NavLink } from "react-router";
 import logoimage from "../../assets/book.png";
 import UseAuth from "../../Hooks/UseAuth";
+import Profile from "../Shared/Profile/Profile";
 
 export default function Navbar() {
   const { user } = UseAuth();
@@ -68,21 +69,22 @@ export default function Navbar() {
           {/* Auth Buttons */}
           {/* Auth Buttons */}
           {user ? (
-            <div className="relative group cursor-pointer">
-              <img
-                src={user.photoURL}
-                alt="profile"
-                className="w-10 h-10 rounded-full border shadow"
-              />
-              <div className="absolute right-0  w-48 bg-white shadow-lg rounded-xl p-3 hidden group-hover:block">
-                <p className="font-semibold text-gray-800">{user.name}</p>
-                <p className="text-gray-800 text-sm font-bold">{user.Role}</p>
-                <p className="text-gray-500 text-sm">{user.email}</p>
-                <button onClick={LogOut} className="btn  btn-error w-full mt-2">
-                  Logout
-                </button>
-              </div>
-            </div>
+            // <div className="relative group cursor-pointer">
+            //   <img
+            //     src={user.photoURL}
+            //     alt="profile"
+            //     className="w-10 h-10 rounded-full border shadow"
+            //   />
+            //   <div className="absolute right-0  w-48 bg-white shadow-lg rounded-xl p-3 hidden group-hover:block">
+            //     <p className="font-semibold text-gray-800">{user.name}</p>
+            //     <p className="text-gray-800 text-sm font-bold">{user.Role}</p>
+            //     <p className="text-gray-500 text-sm">{user.email}</p>
+            //     <button onClick={LogOut} className="btn  btn-error w-full mt-2">
+            //       Logout
+            //     </button>
+            //   </div>
+            // </div>
+            <Profile></Profile>
           ) : (
             <div className="flex items-center gap-4">
               <Link
