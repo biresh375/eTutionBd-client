@@ -62,7 +62,6 @@ const Register = () => {
         alert(err.message);
       });
   };
-  
 
   return (
     <div className="card bg-base-100 mt-7.5 shadow-2xl max-w-8/12 mx-auto">

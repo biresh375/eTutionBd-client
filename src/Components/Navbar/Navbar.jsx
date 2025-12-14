@@ -153,13 +153,13 @@ export default function Navbar() {
           {user ? (
             <div className="flex flex-col items-center gap-1 mt-1">
               <img
-                src={user.photoURL}
+                src={user?.photoURL}
                 alt="profile"
                 className="w-12 h-12 rounded-full border shadow"
               />
-              <p className="font-semibold text-gray-800">{user.name}</p>
-              <p className="text-gray-800 text-sm font-bold">{user.Role}</p>
-              <p className="text-gray-500 text-sm">{user.email}</p>
+              <p className="font-semibold text-gray-800">{user?.displayName}</p>
+              <p className="text-gray-800 text-sm font-bold">{user?.Role}</p>
+              <p className="text-gray-500 text-sm">{user?.email}</p>
               <button
                 onClick={() => {
                   LogOut();
